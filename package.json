@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.29"
+    "element-plus": "^2.7.7",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
@@ -17,6 +19,8 @@
     "postcss": "^8.4.39",
     "sass": "^1.77.8",
     "tailwindcss": "^3.4.4",
+    "unplugin-auto-import": "^0.18.0",
+    "unplugin-vue-components": "^0.27.2",
     "vite": "^5.3.1"
   }
 }
