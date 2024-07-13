@@ -1,12 +1,30 @@
 <script setup>
 
+import {user} from '@/store/index.js'
+import {storeToRefs} from "pinia";
+
+let {users}= storeToRefs(user());
+
+let userStore=user()
+
+
+
+
+let addFun=()=>{
+  userStore.setAge()
+}
+
+
+
+
+
 </script>
 
 <template>
 <div>
-  <h1 class="text-3xl text-indigo-200">
-    啦啦啦啦
-  </h1>
+  {{userStore.age}}
+  {{users}}
+  <el-button @click="addFun">+1</el-button>
 </div>
 </template>
 
