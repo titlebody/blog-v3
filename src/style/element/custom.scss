@@ -1,0 +1,11 @@
+.el-menu--horizontal.el-menu{
+  border:none !important;
+  background-color: transparent !important;
+
+}
+.el-menu-item:hover{
+  background: none !important;
+}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+  background: none !important;
+}

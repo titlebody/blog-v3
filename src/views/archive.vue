@@ -1,13 +1,9 @@
 <script setup>
 
-
-
-
-
 </script>
 
 <template>
-  <div class="h-[200vh]">home</div>
+时间轴
 </template>
 
 <style scoped>

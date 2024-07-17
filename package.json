@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "element-plus": "^2.7.7",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
@@ -16,13 +17,20 @@
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
+    "@iconify-json/bi": "^1.1.23",
+    "@iconify-json/carbon": "^1.1.36",
+    "@iconify-json/icon-park-outline": "^1.1.15",
+    "@iconify-json/material-symbols-light": "^1.1.24",
+    "@iconify-json/mdi": "^1.1.67",
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
     "sass": "^1.77.8",
     "tailwindcss": "^3.4.4",
     "unplugin-auto-import": "^0.18.0",
+    "unplugin-icons": "^0.19.0",
     "unplugin-vue-components": "^0.27.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }
