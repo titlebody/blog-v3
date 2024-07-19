@@ -1,10 +1,20 @@
 .el-menu--horizontal.el-menu{
   border:none !important;
   background-color: transparent !important;
-
 }
+.el-menu-item{
+  color: #ffffff !important;
+}
+.el-sub-menu__title{
+  color: #ffffff !important;
+}
+.el-sub-menu__title:hover{
+  background:none !important;
+}
+
 .el-menu-item:hover{
   background: none !important;
+  color: #fff !important;
 }
 .el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
   background: none !important;

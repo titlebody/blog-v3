@@ -62,7 +62,7 @@ export default defineConfig({
     chunkSizeWarningLimit:4000,
     rollupOptions: {
       input:{
-        index:resolve("index.html")
+        index:path.resolve("index.html")
       },
       output:{
         chunkFileNames:"static/js/[name].[hash].js",

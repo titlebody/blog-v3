@@ -1,7 +1,7 @@
 <script setup>
 import BiCodeSlash from '~icons/bi/code-slash';
 import {defineAsyncComponent} from 'vue'
-import {createRouter, useRouter} from "vue-router";
+import {useRouter} from "vue-router";
 
 const mentsList=[
   {
@@ -50,8 +50,8 @@ function handleSelect(path){
 <template>
   <div class="header-container">
     <div class="left">
-      <BiCodeSlash class="logo"></BiCodeSlash>
-      <h1 class="text-2xl text-blue-800 title">技术博客</h1>
+      <BiCodeSlash class="logo text-white"></BiCodeSlash>
+      <h1 class="text-2xl text-white title">技术博客</h1>
     </div>
     <div class="right">
       <el-menu
@@ -60,6 +60,7 @@ function handleSelect(path){
           mode="horizontal"
           style="max-width: 600px"
           @select="handleSelect"
+          menu-trigger="click"
       >
         <div v-for="menu in mentsList" :key="menu.path">
           <el-sub-menu :index="menu.path" v-if="menu.children.length">
@@ -67,9 +68,9 @@ function handleSelect(path){
               <component :is="menu.icon" class="menuIcon"></component>
               {{menu.title}}
             </template>
-            <el-menu-item :index="men.path" v-for="men in menu.children">
-              <component :is="men.icon" class="menuIcon"></component>
-              {{men.title}}
+            <el-menu-item :index="men.path" v-for="men in menu.children" style="background: transparent">
+              <component :is="men.icon" class="menuIcon !text-black"></component>
+              <span class="!text-black"> {{men.title}}</span>
             </el-menu-item>
           </el-sub-menu>
           <el-menu-item :index="menu.path" v-else>
@@ -114,7 +115,13 @@ function handleSelect(path){
   }
 }
 .menuIcon{
-  margin-right: 5px;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  width: 16px;
+  height: 16px;
+}
+.el-menu-item{
+  background: transparent !important;
 }
 
 </style>

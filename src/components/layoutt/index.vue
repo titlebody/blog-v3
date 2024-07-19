@@ -3,6 +3,8 @@ import Header from './header/index.vue'
 import Footer from './footer/index.vue'
 import Main from './main/index.vue'
 
+
+
 </script>
 <template>
   <div>

@@ -19,6 +19,7 @@
   "devDependencies": {
     "@iconify-json/bi": "^1.1.23",
     "@iconify-json/carbon": "^1.1.36",
+    "@iconify-json/icon-park": "^1.1.13",
     "@iconify-json/icon-park-outline": "^1.1.15",
     "@iconify-json/material-symbols-light": "^1.1.24",
     "@iconify-json/mdi": "^1.1.67",
