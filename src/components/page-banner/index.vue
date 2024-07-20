@@ -9,6 +9,7 @@ let route = useRoute();
 const showScroll=ref(true)
 
 const scrollToBottom=()=>{
+  console.log(1)
   const homeElment = document.querySelector("#home");
   if(homeElment){
     document.body.scrollTo({
@@ -65,7 +66,7 @@ onMounted(() => {
         <IconParkOutlineDown class="w-[4rem] h-[4rem] text-white  scroll-icon w-6 h-6" @click="scrollToBottom" v-if="showScroll"></IconParkOutlineDown>
       </div>
     </div>
-    <div class="archive" v-if="route.path==='/archive'">
+    <div class="archive" v-else-if="route.path==='/archive'">
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title">
@@ -73,7 +74,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="talk" v-if="route.path==='/talk'">
+    <div class="talk" v-else-if="route.path==='/talk'">
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title">
@@ -81,7 +82,15 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="about" v-if="route.path==='/more/about'">
+    <div class="about" v-else-if="route.path==='/more/about'">
+      <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
+      <div class="conter">
+        <div class="title">
+          Blog
+        </div>
+      </div>
+    </div>
+    <div class="Article" v-else>
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title">
@@ -140,21 +149,27 @@ onMounted(() => {
   }
   .archive{
     width: 100%;
-    height: 24rem;
+    height: 21rem;
     overflow: hidden;
     position: relative;
 
   }
+  .Article{
+    width: 100%;
+    height: 21rem;
+    overflow: hidden;
+    position: relative;
+  }
   .talk{
     width: 100%;
-    height: 24rem;
+    height: 21rem;
     overflow: hidden;
     position: relative;
 
   }
   .about{
     width: 100%;
-    height: 24rem;
+    height: 21rem;
     overflow: hidden;
     position: relative;
 

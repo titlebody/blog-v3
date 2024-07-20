@@ -33,7 +33,11 @@ const route=[
                 path:'/archive',
                 component:()=>import('@/views/archive.vue')
             },
-
+            {
+                name:"文章详情",
+                path: '/Article',
+                component:()=>import('@/views/Article.vue')
+            },
         ]
     }
 ]

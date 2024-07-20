@@ -1,14 +1,9 @@
 <script setup>
 
-
-
-
-
-
 </script>
 
 <template>
-  时间轴
+  Article
 </template>
 
 <style scoped>

@@ -8,11 +8,16 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import svgIcon from "@/components/SvgIcon/index.vue";
 import 'virtual:svg-icons-register'
 
+
+
+
+
+
 const pinia=createPinia()
 pinia.use(piniaPluginPersistedstate)
 
 const app=createApp(App)
 app.use(router)
-app.use(pinia);
+app.use(pinia)
 app.component('svg-icon', svgIcon)
 app.mount('#app')

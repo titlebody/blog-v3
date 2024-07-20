@@ -5,7 +5,7 @@ import pageBanner from '@/components/page-banner/index.vue'
 
 <template>
   <div class="main-container">
-    <pageBanner></pageBanner>
+    <pageBanner style="margin-bottom: 60px"></pageBanner>
     <div class="max-w-[1280px] mx-auto ">
       <router-view></router-view>
     </div>
