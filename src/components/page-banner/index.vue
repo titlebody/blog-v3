@@ -3,13 +3,25 @@ import {useRoute} from "vue-router";
 import homebanner from "@/assets/images/home.jpg";
 import IconParkOutlineDown from '~icons/icon-park-outline/down';
 import {ref,onMounted} from "vue";
+import {articleStore} from "@/store/index.js";
+import {storeToRefs} from "pinia";
+import IonCalendarOutline from '~icons/ion/calendar-outline';
+import PhClockLight from '~icons/ph/clock-light';
+import MingcuteClassify2Line from '~icons/mingcute/classify-2-line';
+import PajamasLabel from '~icons/pajamas/label';
+import PhThumbsUpBold from '~icons/ph/thumbs-up-bold';
+import HugeiconsView from '~icons/hugeicons/view';
+import PhAirplayLight from '~icons/ph/airplay-light';
+
+
+let {getArticle} =storeToRefs(articleStore())
+
+
 
 let route = useRoute();
-
 const showScroll=ref(true)
 
 const scrollToBottom=()=>{
-  console.log(1)
   const homeElment = document.querySelector("#home");
   if(homeElment){
     document.body.scrollTo({
@@ -44,6 +56,7 @@ const initScrollEvent = () => {
 
 onMounted(() => {
   initScrollEvent();
+  console.log(getArticle.value)
 });
 
 
@@ -70,7 +83,7 @@ onMounted(() => {
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title">
-          Blog
+          时间轴
         </div>
       </div>
     </div>
@@ -78,7 +91,7 @@ onMounted(() => {
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title">
-          Blog
+          说说
         </div>
       </div>
     </div>
@@ -86,15 +99,46 @@ onMounted(() => {
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title">
-          Blog
+          关于我
         </div>
       </div>
     </div>
     <div class="Article" v-else>
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
-        <div class="title">
-          Blog
+        <div class="title mb-3">
+          {{getArticle.title}}11
+        </div>
+        <div class="author info text-md mb-3 flex-wrap justify-center items-center flex max-w-[60vw]">
+          <div class="item me-[0.9rem] flex items-center">
+            <IonCalendarOutline class="mr-[0.3rem]" ></IonCalendarOutline>
+            <span>发表于：{{getArticle.createTime}}</span>
+          </div>
+          <div class="item me-[0.3rem] flex items-center">
+            <PhClockLight class="mr-[0.3rem]" ></PhClockLight>
+            <span class="mr-[0.3rem]">更新于：{{getArticle.updateTime}}</span>
+          </div>
+          <br>
+          <div class="item me-[0.3rem] flex items-center">
+            <MingcuteClassify2Line class="mr-[0.3rem]" ></MingcuteClassify2Line>
+            <span class="mr-[0.3rem]">{{getArticle.category}}</span>|
+          </div>
+          <div class="item me-[0.3rem] flex items-center">
+            <PajamasLabel class="mr-[0.3rem]" ></PajamasLabel>
+            <span class="mr-[0.3rem]">{{getArticle.tags?.join(',')}}</span>|
+          </div>
+          <div class="item me-[0.3rem] flex items-center">
+            <PhThumbsUpBold class="mr-[0.3rem]" ></PhThumbsUpBold>
+            <span class="mr-[0.3rem]">点赞数：{{getArticle.likes}}</span>|
+          </div>
+          <div class="item me-[0.3rem] flex items-center">
+            <HugeiconsView class="mr-[0.3rem]" ></HugeiconsView>
+            <span class="mr-[0.3rem]">浏览量：{{getArticle.views}}</span>
+          </div>
+          <div class="item me-[0.3rem] flex items-center">
+            <PhAirplayLight class="mr-[0.3rem]" ></PhAirplayLight>
+            <span class="mr-[0.3rem]">阅读时长：{{getArticle.readDuration}}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -129,6 +173,7 @@ onMounted(() => {
       transform: translate(-50%, -50%);
       width: 60%;
       z-index: 2;
+
       .title{
         font-size: 2.4rem;
         font-weight: 700;
@@ -159,6 +204,13 @@ onMounted(() => {
     height: 21rem;
     overflow: hidden;
     position: relative;
+    .conter{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
   }
   .talk{
     width: 100%;

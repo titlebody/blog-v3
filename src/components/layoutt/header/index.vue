@@ -50,8 +50,7 @@ function handleSelect(path){
 <template>
   <div class="header-container">
     <div class="left">
-      <BiCodeSlash class="logo text-white"></BiCodeSlash>
-      <h1 class="text-2xl text-white title">技术博客</h1>
+      <BiCodeSlash class="logo"></BiCodeSlash>
     </div>
     <div class="right">
       <el-menu

@@ -13,6 +13,7 @@ import SimpleIconsBilibili from '~icons/simple-icons/bilibili';
 import SimpleIconsGithub from '~icons/simple-icons/github';
 import LucideBell from '~icons/lucide/bell';
 import IconParkOutlineAnnouncement from '~icons/icon-park-outline/announcement';
+import SvgSpinnersClock from '~icons/svg-spinners/clock';
 import {useRouter} from "vue-router";
 
 const articleList=ref([])
@@ -124,22 +125,22 @@ let Article=(id)=>{
 
 <template>
   <el-row :gutter="20">
-    <el-col :span="16">
+    <el-col :sm="18" :xs="24">
       <el-card class="mb-[1.2rem]" v-for="article in articleList" :key="article.id" shadow="always" @click="Article(article.id)">
-        <div class="article-item w-[100%] h-[16rem] flex">
-          <div class="article-cover w-[45%] h-[100%] overflow-hidden">
+        <div class="article-item w-[100%] md:h-[18rem] 24rem flex md:flex-row flex-col">
+          <div class="article-cover md:w-[45%] md:h-[100%] w-[100%] h-[60%] overflow-hidden">
             <el-image :src="article.cover" class="w-[100%] h-[100%] duration-300 hover:scale-125" fit="cover"></el-image>
           </div>
-          <div class="side w-[55%] h-[100%] flex flex-col justify-center pl-[1.2rem]">
+          <div class="side md:w-[55%] md:h-[100%] w-[100%] h-[50%] pb-2 flex flex-col justify-center pl-[1.2rem]">
             <div class="title text-3xl mb-5">{{article.title}}</div>
-            <div class="author info text-md mb-3 flex-wrap items-center flex">
+            <div class="author info text-md mb-3 flex-wrap items-center flex text-sm">
               <div class="item me-[0.9rem] flex items-center">
                 <IonCalendarOutline class="mr-[0.3rem]" ></IonCalendarOutline>
-                <span>{{article.createTime}}</span>
+                <span>发表于：{{article.createTime}}</span>
               </div>
               <div class="item me-[0.3rem] flex items-center">
                 <PhClockLight class="mr-[0.3rem]" ></PhClockLight>
-                <span class="mr-[0.3rem]">{{article.updateTime}}</span>
+                <span class="mr-[0.3rem]">更新于：{{article.updateTime}}</span>
               </div>
               <br>
               <div class="item me-[0.3rem] flex items-center">
@@ -167,15 +168,15 @@ let Article=(id)=>{
 
         </div>
       </el-card>
-      <div class="flex justify-center items-center ">
+      <div class="flex justify-center items-center mb-[1.2rem]">
         <el-pagination v-model:current-page="params.currentPage" background layout="prev, pager, next" :total="staticArticleList.length"
                        :page-size="params.pageSize"
                        @change="getArticleList"
         />
       </div>
     </el-col>
-    <el-col :span="8">
-      <el-card class="mb-[1.2rem]" >
+    <el-col :sm="6" :xs="24">
+      <el-card class="mb-[1.2rem] " >
         <div class="banner w-[100%] h-[8rem]">
           <el-image class="w-[100%] h-[100%]" fit="cover" :src="bg"></el-image>
         </div>

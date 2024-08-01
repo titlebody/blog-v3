@@ -32,6 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size: var(--global-font-size);
+  overflow-x: hidden;
 
   font-family:
           Helvetica Neue,
