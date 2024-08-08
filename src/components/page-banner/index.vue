@@ -107,7 +107,7 @@ onMounted(() => {
       <el-image :src="homebanner" class="homebanner" fit="cover"></el-image>
       <div class="conter">
         <div class="title mb-3">
-          {{getArticle.title}}11
+          {{getArticle.title}}
         </div>
         <div class="author info text-md mb-3 flex-wrap justify-center items-center flex max-w-[60vw]">
           <div class="item me-[0.9rem] flex items-center">

@@ -117,6 +117,7 @@ const articleDeta={
 }
 
 
+
 const articles = ref()
 
 onMounted(() => {
@@ -166,10 +167,10 @@ onMounted(() => {
       </el-card>
     </el-col>
     <el-col :sm="6" :xs="0">
-      <el-affix offset="60">
+      <el-affix :offset="60">
         <el-card>
           <div class="w-[100%] max-h-[60vh] py-1"></div>
-          <MdCatalog :editorId="id" :scrollElement="scrollElement" :scrollElementOffsetTop="60"/>
+          <MdCatalog :editorId="id" :scrollElement="scrollElement" :offset-top="80" :scrollElementOffsetTop="60"/>
         </el-card>
       </el-affix>
 
