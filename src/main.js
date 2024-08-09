@@ -5,6 +5,9 @@ import router from './router'
 import {createPinia} from "pinia";
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
+//暗黑主题
+import 'element-plus/theme-chalk/dark/css-vars.css'
+
 import svgIcon from "@/components/SvgIcon/index.vue";
 import 'virtual:svg-icons-register'
 

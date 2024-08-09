@@ -116,6 +116,11 @@ const articleDeta={
   readDuration:"100小时20分钟11秒"
 }
 
+import {configStore} from "@/store";
+import {storeToRefs} from "pinia";
+
+const {getIsDark} =storeToRefs(configStore())
+
 
 
 const articles = ref()
@@ -131,7 +136,7 @@ onMounted(() => {
   <el-row :gutter="20">
     <el-col :sm="18" :xs="24">
       <el-card>
-        <MdPreview :editorId="id" :modelValue="articleContent" />
+        <MdPreview :editorId="id" :modelValue="articleContent" :theme="getIsDark?'dark':'light'"/>
         <el-card class="p-[10px]">
           <div class="border-indigo-300 m-[20px] border">
             <div class="copyright-info p-[20px]" >

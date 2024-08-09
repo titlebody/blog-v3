@@ -8,7 +8,7 @@ import SimpleIconsGithub from '~icons/simple-icons/github';
 </script>
 
 <template>
-  <div class="card mb-[1.2rem]" data-state="#about">
+  <div  data-state="#about">
     <div class="card-header">
       <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
       <img class="card-avatar" src="https://ts1.cn.mm.bing.net/th/id/R-C.6e10b0fcc47bdcad563be1db56ce85eb?rik=PE4PMZQUYSzS3A&riu=http%3a%2f%2fimg.keaiming.com%2fuploads%2fallimg%2f2020010409%2fbirbnfxp4kq.png&ehk=m8Tn81I%2f8b7G8GmPbn8OSjjCwhiLxk2%2f8udgU2FyfJI%3d&risl=&pid=ImgRaw&r=0" alt="avatar" />

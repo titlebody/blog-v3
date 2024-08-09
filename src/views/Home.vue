@@ -16,6 +16,7 @@ import IconParkOutlineAnnouncement from '~icons/icon-park-outline/announcement';
 import SvgSpinnersClock from '~icons/svg-spinners/clock';
 import {useRouter} from "vue-router";
 import introduced from '@/components/widgets/introduced.vue'
+import blogImage from "@/components/blog-image/index.vue"
 
 const articleList=ref([])
 
@@ -130,7 +131,8 @@ let Article=(id)=>{
       <el-card class="mb-[1.2rem]" v-for="article in articleList" :key="article.id" shadow="always" @click="Article(article.id)">
         <div class="article-item w-[100%] md:h-[18rem] 24rem flex md:flex-row flex-col">
           <div class="article-cover md:w-[45%] md:h-[100%] w-[100%] h-[60%] overflow-hidden">
-            <el-image :src="article.cover" class="w-[100%] h-[100%] duration-300 hover:scale-125" fit="cover"></el-image>
+<!--            <el-image :src="article.cover" class="w-[100%] h-[100%] duration-300 hover:scale-125" fit="cover"></el-image>-->
+            <blogImage :src="article.cover" fit="cover" :animate='true'></blogImage>
           </div>
           <div class="side md:w-[55%] md:h-[100%] w-[100%] h-[50%] pb-2 flex flex-col justify-center pl-[1.2rem]">
             <div class="title text-3xl mb-5">{{article.title}}</div>
@@ -215,7 +217,9 @@ let Article=(id)=>{
           </div>
         </div>
       </el-card>-->
-      <introduced></introduced>
+      <el-card class="mb-[1.2rem]">
+        <introduced></introduced>
+      </el-card>
       <el-card class="mb-[1.2rem]">
         <template #header>
           <div class="text-xl font-bold flex items-center"><LucideBell class="mr-[0.4rem]"></LucideBell>公告</div>

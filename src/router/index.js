@@ -1,4 +1,7 @@
 import {createRouter,createWebHistory} from "vue-router";
+// 引入NProgress进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 const route=[
     {
@@ -61,5 +64,20 @@ const router=createRouter({
     history: createWebHistory(),
     routes: route
 })
+
+
+
+
+// 路由守卫
+router.beforeEach((to,from,next)=>{
+    // 进度条
+    NProgress.start()
+    next()
+})
+
+router.afterEach(()=>{
+    NProgress.done()
+})
+
 
 export default router;

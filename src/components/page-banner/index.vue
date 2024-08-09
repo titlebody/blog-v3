@@ -1,6 +1,6 @@
 <script setup>
 import {useRoute} from "vue-router";
-import homebanner from "@/assets/images/home.jpg";
+import homebanner from "@/assets/images/banner1.png";
 import IconParkOutlineDown from '~icons/icon-park-outline/down';
 import {ref,onMounted} from "vue";
 import {articleStore} from "@/store/index.js";
@@ -56,7 +56,6 @@ const initScrollEvent = () => {
 
 onMounted(() => {
   initScrollEvent();
-  console.log(getArticle.value)
 });
 
 

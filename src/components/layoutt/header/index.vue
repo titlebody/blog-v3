@@ -1,7 +1,14 @@
 <script setup>
 import BiCodeSlash from '~icons/bi/code-slash';
-import {defineAsyncComponent} from 'vue'
+import {defineAsyncComponent,ref} from 'vue'
 import {useRouter} from "vue-router";
+import {configStore} from "@/store/index.js";
+import {storeToRefs} from "pinia";
+import container from '@/components/widgets/container.vue'
+
+const {getIsDark}=storeToRefs(configStore())
+const isDark = ref(getIsDark.value)
+
 
 const mentsList=[
   {
@@ -79,6 +86,7 @@ function handleSelect(path){
         </div>
       </el-menu>
       <el-avatar>M</el-avatar>
+      <container class="ml-[2rem]"></container>
     </div>
   </div>
 
