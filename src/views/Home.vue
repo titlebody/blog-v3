@@ -15,6 +15,7 @@ import LucideBell from '~icons/lucide/bell';
 import IconParkOutlineAnnouncement from '~icons/icon-park-outline/announcement';
 import SvgSpinnersClock from '~icons/svg-spinners/clock';
 import {useRouter} from "vue-router";
+import introduced from '@/components/widgets/introduced.vue'
 
 const articleList=ref([])
 
@@ -176,7 +177,7 @@ let Article=(id)=>{
       </div>
     </el-col>
     <el-col :sm="6" :xs="24">
-      <el-card class="mb-[1.2rem] " >
+<!--      <el-card class="mb-[1.2rem] " >
         <div class="banner w-[100%] h-[8rem]">
           <el-image class="w-[100%] h-[100%]" fit="cover" :src="bg"></el-image>
         </div>
@@ -213,7 +214,8 @@ let Article=(id)=>{
             <SimpleIconsGithub class=" w-[1.8rem] h-[1.8rem]"></SimpleIconsGithub>
           </div>
         </div>
-      </el-card>
+      </el-card>-->
+      <introduced></introduced>
       <el-card class="mb-[1.2rem]">
         <template #header>
           <div class="text-xl font-bold flex items-center"><LucideBell class="mr-[0.4rem]"></LucideBell>公告</div>

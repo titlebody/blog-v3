@@ -39,8 +39,23 @@ const route=[
                 component:()=>import('@/views/Article.vue')
             },
         ]
+    },
+    {
+        name:"NotFound",
+        path:'/404',
+        meta: {
+            title: 'Page not found',
+            isLogin: false
+        },
+        component:()=>import('@/views/404.vue')
+    },
+    {
+        path:'/:catchAll(.*)',
+        redirect: '/404'
     }
 ]
+
+
 
 const router=createRouter({
     history: createWebHistory(),
